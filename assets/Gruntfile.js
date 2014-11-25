@@ -57,7 +57,7 @@ module.exports = function(grunt) {
         compass: {
             dist: {
                 options: {
-                    require: ['compass-normalize'],
+                    require: ['susy','breakpoint'],
                     sassDir: 'styles/source',
                     cssDir: 'styles/build',
                     imagesDir: 'images',

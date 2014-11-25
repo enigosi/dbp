@@ -1,0 +1,20 @@
+@import "susy";
+@include border-box-sizing;
+@include layout($susy);
+
+
+body { 
+  @include container; 
+  
+	.content {
+	  @include container(94%);
+
+	  @if $ifdebug == true {
+	    @include debug-vertical-alignment();
+	  }
+	  
+	  @include breakpoint($xlarge){
+	      @include container(80%);
+	  }
+	}
+}

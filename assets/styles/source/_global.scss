@@ -1,2 +1,104 @@
+$ifdebug: false;
+
+/////////////
+//typography
+$base-font-size: 18px;
+$line-height:28px;
+$lil:1; //line divider 
+$base-line-height: $line-height/$lil;
+
+$font-family: 'Fira Sans', Helvetica, Arial, sans-serif;
+
+$font-light: 300;
+$font-regular: 400;
+$font-bold: 700;
+
+$font-weight-def: 300;
+
+
+$transition-time:.8s;
+$transition-time-f:$transition-time/2;
+
+$tablet-font-scale:0.9;
+$mobile-font-scale:0.85;
+
+////////////
+// font size
+$f-xlarge: 34px;
+$f-large: 22px;
+$f-smaller:16px;
+$f-small:14px;
+
+
+// px to rem
+@function rem-calc($size) {
+  $remSize: $size / $base-font-size;
+  @return $remSize * 1rem;
+}
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: rem-calc($size);
+}
+
+
+////////////////////
+// Grid
+
+//break points
+$breakpoint-to-ems:true;
+
+$bp-small:640px;
+$bp-medium:1080px;
+$bp-large:1400px;
+$bp-xlarge:1680px;
+
+$small-only: max-width $bp-small;
+
+$medium-only: $bp-small $bp-medium;
+$medium-up: $bp-small;
+$medium-down: max-width $bp-medium;
+
+$large-only: $bp-medium $bp-large;
+$large-up: $bp-medium;
+$large-down: max-width $bp-large;
+
+$xlarge-up: $bp-large;
+
+$xxlarge-up: $bp-xlarge;
+
+
+$col-large:12;
+$col-medium:12;
+$col-small:4;
+
+
+$susy: (
+  columns: 4,
+  gutters: 1/4,
+  math: fluid,
+  output: float,
+  gutter-position: inside,
+);
+$susy-medium: (
+  columns: $col-medium,
+  gutters: 1/4,
+  math: fluid,
+  output: float,
+  gutter-position: inside,  
+);
+$susy-large: (
+  columns: 12,
+  gutters: 0,
+  math: fluid,
+  output: float,
+  gutter-position: inside,  
+);
+
+
+/////////////
+// colors
+$white: #fff;
+$black: #000;
+$oil: #222;
 $light-gray: #eeeeee;
 $dark-gray: #aaaaaa;
