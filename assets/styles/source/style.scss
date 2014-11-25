@@ -1,0 +1,10 @@
+// reset browser default style
+@import "compass/reset";
+
+//variables and functions
+@import "global";
+@import "compass";
+
+.a {
+	background:rgba($light-gray, .5)
+}
