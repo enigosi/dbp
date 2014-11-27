@@ -7,24 +7,28 @@ $line-height:28px;
 $lil:1; //line divider 
 $base-line-height: $line-height/$lil;
 
-$font-family: 'Fira Sans', Helvetica, Arial, sans-serif;
+$font-family-body: 'Roboto', Helvetica, Arial, sans-serif;
+$font-family-headers: 'Lato', Helvetica, Arial, sans-serif;
 
 $font-light: 300;
 $font-regular: 400;
 $font-bold: 700;
 
-$font-weight-def: 300;
+$font-weight-def: $font-regular;
 
 
-$transition-time:.8s;
-$transition-time-f:$transition-time/2;
+$transition-time-s:.8s;
+$transition-time:.4s;
+$transition-time-f:.2s;
+$transition-time-xf:.1s;
 
 $tablet-font-scale:0.9;
 $mobile-font-scale:0.85;
 
 ////////////
 // font size
-$f-xlarge: 34px;
+$f-xxlarge: 48px;
+$f-xlarge: 32px;
 $f-large: 22px;
 $f-smaller:16px;
 $f-small:14px;
@@ -79,19 +83,12 @@ $susy: (
   output: float,
   gutter-position: inside,
 );
-$susy-medium: (
+$susy-medium-up: (
   columns: $col-medium,
   gutters: 1/4,
   math: fluid,
+  gutter-position: after,
   output: float,
-  gutter-position: inside,  
-);
-$susy-large: (
-  columns: 12,
-  gutters: 0,
-  math: fluid,
-  output: float,
-  gutter-position: inside,  
 );
 
 
@@ -100,5 +97,20 @@ $susy-large: (
 $white: #fff;
 $black: #000;
 $oil: #222;
-$light-gray: #eeeeee;
+$white-gray: #f9f9f9;
+$light-gray: #f2f2f2;
 $dark-gray: #aaaaaa;
+$light-blue: darken(#eef4f4, 5%);
+
+$text-color: $oil;
+
+// layout settings
+// header
+$header-height: rem-calc($line-height*4);
+$footer-height: rem-calc($line-height*4);
+$margin-right: rem-calc(70px);
+$content-shift: rem-calc(30px);
+$margin-left: $margin-right + $content-shift;
+
+$padding-top: rem-calc($line-height*2);
+$padding-bottom: rem-calc($line-height);

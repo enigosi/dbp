@@ -73,6 +73,15 @@ module.exports = function(grunt) {
             }
         },
 
+        // vendor browser prefixes
+        autoprefixer: {
+          dist: {
+            files: {
+              'styles/build/style.css': 'styles/build/style.css'
+            }
+          }
+        },
+
          // image optimization
         imagemin: {
             dist: {
@@ -129,6 +138,7 @@ module.exports = function(grunt) {
         'compass',
         'uglify',
         'imagemin',
+        'autoprefixer',
         'watch'
     ]);
 

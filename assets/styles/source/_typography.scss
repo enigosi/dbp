@@ -1,8 +1,9 @@
 @include establish-baseline;
 
 html {
-  font-family:$font-family;
-  font-weight:$def-font-weight;
+  font-family:$font-family-body;
+  font-weight:$font-weight-def;
+  color: $text-color;
   @include adjust-leading-to($lil);
   
   @include breakpoint($medium-only) {
@@ -31,6 +32,9 @@ html {
 @mixin xlarge {
      @include adjust-font-size-to($f_xlarge);
 }
+@mixin xxlarge {
+     @include adjust-font-size-to($f_xxlarge);
+}
 
 // font weight
 @mixin light {
@@ -41,4 +45,16 @@ html {
 }
 @mixin bold {
   font-weight:$font-bold;
+}
+
+//font-family
+@mixin header {
+  font-family: $font-family-headers;
+}
+
+//font setups
+
+@mixin fat-text {
+  @include header;
+  @include bold;
 }

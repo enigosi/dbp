@@ -4,17 +4,45 @@
 
 
 body { 
-  @include container; 
-  
-	.content {
-	  @include container(94%);
+	@include container;
+	padding-top:$header-height;
+}
 
-	  @if $ifdebug == true {
-	    @include debug-vertical-alignment();
-	  }
-	  
-	  @include breakpoint($xlarge){
-	      @include container(80%);
-	  }
+
+// page wd
+
+@mixin page-wrapper {
+  @include container(94%);
+
+  @include breakpoint($large-up){
+    margin:0 $margin-right 0 $margin-left;
+  }
+}
+
+.g_contain {
+  	@include page-wrapper;	
+}
+.g_content {
+	@extend .g_contain;
+  	background: $light-blue;
+ 	
+ 	@include susy-breakpoint ($medium-up, $susy-medium-up) {
+ 		padding: $padding-top 0 $padding-bottom 0;
+ 	}
+}
+.g_shift {
+	 @include susy-breakpoint ($large-up, $susy-medium-up) {
+ 		position:relative;
+ 		left: -$content-shift;
+ 	} 	
+}
+
+// Biuro Page layout
+@include susy-breakpoint($medium-up, $susy-medium-up) {	
+	.biuro {
+		@include span(7 of 12);
+	}
+	.oferta {
+		@include span(4 at 9 of 12);
 	}
 }
