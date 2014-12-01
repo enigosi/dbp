@@ -30,11 +30,14 @@ body {
  		padding: $padding-top 0 $padding-bottom 0;
  	}
 }
-.g_shift {
+@mixin shift {
 	 @include susy-breakpoint ($large-up, $susy-medium-up) {
  		position:relative;
  		left: -$content-shift;
  	} 	
+}
+.g_shift {
+	@include shift;
 }
 
 // Biuro Page layout

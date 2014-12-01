@@ -12,10 +12,22 @@
 //typography
 @import "typography";
 
+///////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////
+
+
+
+////////
 //global
+
 a {
 	@include unstyled-link;
 }
+img {
+	max-width:100%;
+}
+
+
 
 /////////
 // header
@@ -24,11 +36,19 @@ a {
 	height:$header-height;
 	line-height:$header-height;
 	background:$white;
-
+}
+// >
 	.logo-link {
 		float:left;
 		vertical-align:middle;
 	}
+	// >
+		.logo {
+			// @include shift;
+			vertical-align: middle;
+			height:$header-height*0.8;
+		}
+
 	.menu {
 		float:right;
 		@include header;
@@ -37,13 +57,36 @@ a {
 			float:left;
 			padding-left:20px;
 			@include fat-text;
+
+			@include susy-breakpoint($large-up, $susy-medium-up) {
+				a {
+					display:block;
+					overflow:hidden;
+		    		transition: color $transition-time-xf linear;	
+
+					&:after {
+						display:block;
+						width:100%;
+						height:4px;
+						background:$vivid-blue;
+						content:"";
+						transform: translateX(-100%);
+		    			transition: transform $transition-time-xf linear;	
+		    			position:relative;
+		    			top:-30px;			
+					}
+					&:hover {
+						color:$vivid-blue;
+						&:after {
+							transform: translateX(0%);					
+						}
+					}
+				}
+			} // ! breakpoint
+
 		}
 	}
-	.logo {
-		vertical-align: middle;
-		height:rem-calc(50px);
-	}
-}
+
 
 .headroom {
     position: fixed;
@@ -63,6 +106,8 @@ a {
 }
 
 
+
+/////////////
 // Realizacje
 
 .realizacje-list {
@@ -83,11 +128,10 @@ a {
 		@include gallery($col-medium/2 of $col-medium);		
 		margin-bottom: gutter(); //redefine - 12 columns space
 		position:relative;
-
+	}
+	// >
 		.realizacje-text {
-			position:absolute;
-			top:50%;
-    		transform: translateY(-50%);			
+			@include vertical-center;		
 			text-align:center;	
 			opacity:0;
     		transition: opacity $transition-time-f;		
@@ -98,14 +142,15 @@ a {
 			@include large;
 			@include fat-text;			
     		padding-bottom:5px;
-    		border-bottom:2px solid $white;
+    		border-bottom:2px solid $text-color;
     		display:inline-block;
-    		color:$white;
+    		color:$text-color;
 		}
 
 		.realizacje-link {
 			> img {
 				transition: opacity $transition-time-f;	
+				vertical-align:top; //delete extra margin
 			}
 
 			&:hover .realizacje-text {
@@ -116,17 +161,49 @@ a {
 				opacity:0;
 			}
 		}
+
+	.realizacje-item--overlay {
+		background:$vivid-blue;
+		
+		.realizacje-title {
+			color:$white;
+			border-color:$white;
+		}
 	}	
+	
 }
 
-@include susy-breakpoint($large-up, $susy-medium-up) {
-	
+@include susy-breakpoint($large-up, $susy-medium-up) {	
 	.realizacje-item {
 		@include gallery($col-medium/3 of $col-medium);
 	}	
 }
 
 
+////////////////////
+// Realizacje Single
+
+.realizacje-single {
+	> p {
+		@include large;
+	}
+}
+// >
+	.realizacje-gallery {
+		@include leader($lil);
+
+		> li {
+			@include trailer($lil);
+
+			> img {
+				width:100%;
+			}
+		}
+	}
+
+
+
+//////////
 // content
 
 .g_spacer {
@@ -149,16 +226,86 @@ a {
 	@include trailer($lil);
 }
 
+
+///////////
+//home page
+
+.fullscreen {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	z-index:1;
+	background:$vivid-blue;
+	text-align:center;	
+}
+// >
+	.fullscreen-image {
+		width:100%;
+		opacity:0.2;
+	}
+
+	.fullscreen-text {
+		@include vertical-center;	
+		@include fat-text;
+		@include xxlarge;
+		z-index:5;	
+		width:90%;
+		margin:0 5%;	
+		color:$white;
+		text-transform:uppercase;
+		letter-spacing:6px;
+	}
+
+.home-curtian {
+	width:100%;
+	background:$white;
+	margin-top:100vh;
+	z-index:3;
+	position:relative; 
+	padding-top:50px;
+}
+.home-skip {
+	@include dbp-box-shadow();
+	@include bold;
+	display:inline-block;
+	padding:3px 26px 7px 26px;
+	position:absolute;
+	bottom:10%;
+	z-index:5;
+	border:4px solid $white;
+	color:$white;
+	margin-left: -70px;
+	
+	.home-arrow {
+		display:block;
+		clear:both;
+		transition: transform $transition-time-f linear;
+	}	
+	&:hover .home-arrow {
+		transform: translateY(5px);
+	}
+}
+
+
+////////////
 //biuro page
 
 .oferta {
+	@include dbp-box-shadow();	
 	margin: 0 0 -120px 0;
 	padding: 30px;
 	background: white;
-	border: 4px solid $light-blue;
+	border: 4px solid $vivid-blue;
+
+	.g_h2 {
+		@include adjust-leading-to(2*$lil);
+	}
 }
 .biuro-list {
 	@include trailer($lil);
+
 	> li {
 		@include adjust-leading-to(2*$lil);
 
@@ -171,8 +318,29 @@ a {
 		}
 	}
 }
+
+
+////////
 //footer
+
 footer {
 	height:$header-height;
 	line-height:$header-height;
+	background:$white;
+	position:relative;
+	z-index:10;
+}
+#scroll-top-arrow {
+	position:fixed;
+	z-index:11;
+	right:25px;
+	bottom:10px;
+	@include xxlarge;
+	transition: opacity $transition-time-f linear;
+}
+.scroll-top-arrow--hidden {
+	opacity:0;
+}
+.scroll-top-arrow--show {
+	opacity:1;
 }

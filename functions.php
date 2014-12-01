@@ -70,7 +70,7 @@ add_action( 'init', 'custom_post_type', 0 );
 
 function base_scripts() {
 
-	wp_enqueue_script( 'jquery' );
+//	wp_enqueue_script( 'jquery' );
 
 	wp_enqueue_style( 'fonts', 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,900|Noto+Sans|Lato:100,300,400,700,900|Arimo:400,700|Ubuntu:400,700|Archivo+Narrow:400,700|Oxygen:400,700,300|Montserrat:400,700|Hind:400,700,500,300,600|Roboto+Condensed:700,700,300|Open+Sans:400,300,600,700,800|Roboto:400,100,300,500,700,900&subset=latin,latin-ext');
 
@@ -154,4 +154,66 @@ function first_post_image($size = 'thumbnail') {
 	}
 	
 	return false;
+}
+
+///////////////////////////////////////////////////
+// gallery display
+
+add_filter('post_gallery', 'my_post_gallery', 10, 2);
+function my_post_gallery($output, $attr) {
+    global $post;
+
+    if (isset($attr['orderby'])) {
+        $attr['orderby'] = sanitize_sql_orderby($attr['orderby']);
+        if (!$attr['orderby'])
+            unset($attr['orderby']);
+    }
+
+    extract(shortcode_atts(array(
+        'order' => 'ASC',
+        'orderby' => 'menu_order ID',
+        'id' => $post->ID,
+        'itemtag' => 'dl',
+        'icontag' => 'dt',
+        'captiontag' => 'dd',
+        'columns' => 3,
+        'size' => 'thumbnail',
+        'include' => '',
+        'exclude' => ''
+    ), $attr));
+
+    $id = intval($id);
+    if ('RAND' == $order) $orderby = 'none';
+
+    if (!empty($include)) {
+        $include = preg_replace('/[^0-9,]+/', '', $include);
+        $_attachments = get_posts(array('include' => $include, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby));
+
+        $attachments = array();
+        foreach ($_attachments as $key => $val) {
+            $attachments[$val->ID] = $_attachments[$key];
+        }
+    }
+
+    if (empty($attachments)) return '';
+
+
+    $output = '<ul class="realizacje-gallery">';
+
+    // Now you loop through each attachment
+    foreach ($attachments as $id => $attachment) {
+        // Fetch the thumbnail (or full image, it's up to you)
+      $img = wp_get_attachment_image_src($id, 'medium');
+//      $img = wp_get_attachment_image_src($id, 'my-custom-image-size');
+      $img_full = wp_get_attachment_image_src($id, 'full');
+
+        $output .= "<li><span data-lazy-load=\"{$img_full[0]}\">
+        				<a href=\"{$img_full[0]}\"></a>
+        				<noscript><img src=\"{$img_full[0]}\"></a></noscript>
+        			</span></li>\n";
+    }
+
+    $output .= "</ul>";
+
+    return $output;
 }
