@@ -1,0 +1,71 @@
+/////////////
+// Realizacje
+
+.realizacje-list {
+	padding-top: gutter();
+}
+.realizacje-item {
+	margin-bottom: gutter();
+
+	.realizacje-link > img {
+		width:100%;
+		height:auto;
+	}
+}
+
+@include susy-breakpoint($medium-up, $susy-medium-up) {
+
+	.realizacje-item {
+		@include gallery($col-medium/2 of $col-medium);
+		margin-bottom: gutter(); //redefine - 12 columns space
+		position:relative;
+	}
+	// >
+		.realizacje-text {
+			@include vertical-center;
+			text-align:center;
+			opacity:0;
+    		transition: opacity $transition-time-f;
+    		width:90%;
+    		margin:0 5%;
+		}
+		.realizacje-title {
+			@include large;
+			@include fat-text;
+    		padding-bottom:5px;
+    		border-bottom:2px solid $text-color;
+    		display:inline-block;
+    		color:$text-color;
+		}
+
+		.realizacje-link {
+			> img {
+				transition: opacity $transition-time-f;
+				vertical-align:top; //delete extra margin
+			}
+
+			&:hover .realizacje-text {
+				opacity:1;
+			}
+
+			&:hover > img {
+				opacity:0;
+			}
+		}
+
+	.realizacje-item--overlay {
+		background:$vivid-blue;
+
+		.realizacje-title {
+			color:$white;
+			border-color:$white;
+		}
+	}
+
+}
+
+@include susy-breakpoint($large-up, $susy-medium-up) {
+	.realizacje-item {
+		@include gallery($col-medium/3 of $col-medium);
+	}
+}

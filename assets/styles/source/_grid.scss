@@ -1,9 +1,8 @@
-@import "susy";
 @include border-box-sizing;
 @include layout($susy);
 
 
-body { 
+body {
 	@include container;
 	padding-top:$header-height;
 }
@@ -11,37 +10,25 @@ body {
 
 // page wd
 
-@mixin page-wrapper {
-  @include container(94%);
-
-  @include breakpoint($large-up){
-    margin:0 $margin-right 0 $margin-left;
-  }
-}
 
 .g_contain {
-  	@include page-wrapper;	
+  	@include page-wrapper;
 }
 .g_content {
 	@extend .g_contain;
   	background: $light-blue;
- 	
+
  	@include susy-breakpoint ($medium-up, $susy-medium-up) {
  		padding: $padding-top 0 $padding-bottom 0;
  	}
 }
-@mixin shift {
-	 @include susy-breakpoint ($large-up, $susy-medium-up) {
- 		position:relative;
- 		left: -$content-shift;
- 	} 	
-}
+
 .g_shift {
 	@include shift;
 }
 
 // Biuro Page layout
-@include susy-breakpoint($medium-up, $susy-medium-up) {	
+@include susy-breakpoint($medium-up, $susy-medium-up) {
 	.biuro {
 		@include span(7 of 12);
 	}

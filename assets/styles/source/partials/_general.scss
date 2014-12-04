@@ -1,0 +1,74 @@
+////////
+//mixins
+
+// hard box shadow
+@mixin dbp-box-shadow($size: 7px, $color: $vivid-blue) {
+  box-shadow:-$size $size 0px 0px $color;
+}
+
+// tiny line separator
+@mixin separation-line {
+        &:before {
+          width: 10px;
+          height: 2px;
+          background: #222;
+          content: "";
+          float:inherit;
+          display: block;
+          @include leader($lil/2);
+          @include trailer($lil/2);
+        }
+}
+
+// shift website grid
+@mixin shift {
+	 @include susy-breakpoint ($large-up, $susy-medium-up) {
+ 		position:relative;
+ 		left: -$content-shift;
+ 	}
+}
+
+// page container
+@mixin page-wrapper {
+  @include container(94%);
+
+  @include breakpoint($large-up){
+    margin:0 $margin-right 0 $margin-left;
+  }
+}
+
+
+/////////
+////////
+//global
+
+a {
+	@include unstyled-link;
+}
+img {
+	max-width:100%;
+  height:auto;
+}
+//////////
+// content
+
+.g_spacer {
+	background: $text-color;
+	width: 50px;
+	height: 4px;
+	margin: rhythm(1) 0;
+}
+.g_h1 {
+	@include fat-text;
+	@include xlarge;
+}
+.g_h2 {
+	@include fat-text;
+	@include large;
+}
+.g_p {
+	@include large;
+	@include trailer($lil);
+}
+
+//mixins

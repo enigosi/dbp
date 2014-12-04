@@ -1,0 +1,20 @@
+////////////////////
+// Realizacje Single
+
+.realizacje-single {
+	> p {
+		@include large;
+	}
+}
+// >
+	.realizacje-gallery {
+		@include leader($lil);
+
+		> li {
+			@include trailer($lil);
+
+			> img {
+				width:100%;
+			}
+		}
+	}

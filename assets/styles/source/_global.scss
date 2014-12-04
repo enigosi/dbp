@@ -4,8 +4,11 @@ $ifdebug: false;
 //typography
 $base-font-size: 18px;
 $line-height:28px;
-$lil:1; //line divider 
+$lil:1; //line divider
 $base-line-height: $line-height/$lil;
+
+$rhythm-unit: "rem";
+$round-to-nearest-half-line: true;
 
 $font-family-body: 'Roboto', Helvetica, Arial, sans-serif;
 $font-family-headers: 'Lato', Helvetica, Arial, sans-serif;
@@ -115,8 +118,3 @@ $margin-left: $margin-right + $content-shift;
 
 $padding-top: rem-calc($line-height*2);
 $padding-bottom: rem-calc($line-height);
-
-//elements
-@mixin dbp-box-shadow($size: 7px, $color: $vivid-blue) {
-  box-shadow:-$size $size 0px 0px $color;
-}

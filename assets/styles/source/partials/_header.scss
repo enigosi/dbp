@@ -1,0 +1,77 @@
+/////////
+// header
+
+.header {
+	height:$header-height;
+	line-height:$header-height;
+	background:$white;
+}
+// >
+	.logo-link {
+		float:left;
+		vertical-align:middle;
+	}
+	// >
+		.logo {
+			 @include shift;
+			vertical-align: middle;
+			height:$header-height*0.8;
+		}
+	// <
+	.menu {
+		float:right;
+		@include header;
+
+		> li {
+			float:left;
+			padding-left:20px;
+			@include fat-text;
+
+			@include susy-breakpoint($large-up, $susy-medium-up) {
+
+				a {
+					display:block;
+					overflow:hidden;
+		    		transition: color $transition-time-xf linear;
+
+					&:after {
+						display:block;
+						width:100%;
+						height:4px;
+						background:$vivid-blue;
+						content:"";
+						transform: translateX(-100%);
+		    			transition: transform $transition-time-xf linear;
+		    			position:relative;
+		    			top:-30px;
+					}
+					&:hover {
+						color:$vivid-blue;
+						&:after {
+							transform: translateX(0%);
+						}
+					}
+				}
+			} // ! breakpoint
+
+		}
+	}
+
+// headroom style
+
+.headroom {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index:10;
+    right: 0;
+    transition: all $transition-time-f linear;
+}
+.headroom--pinned {
+    transform: translateY(0%);
+    opacity:1;
+}
+.headroom--unpinned {
+    transform: translateY(-100%);
+    opacity:.5;
+}

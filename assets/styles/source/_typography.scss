@@ -5,11 +5,11 @@ html {
   font-weight:$font-weight-def;
   color: $text-color;
   @include adjust-leading-to($lil);
-  
+
   @include breakpoint($medium-only) {
     @include adjust-font-size-to($base-font-size*$tablet-font-scale);
   }
-  
+
   @include breakpoint($small-only) {
     @include adjust-font-size-to($base-font-size*$mobile-font-scale);
   }
@@ -57,7 +57,7 @@ html {
 @mixin vertical-center {
   position:absolute;
   top:50%;
-  transform: translateY(-50%);  
+  transform: translateY(-50%);
 }
 //font setups
 

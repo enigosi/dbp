@@ -1,4 +1,4 @@
-<?php 
+<?php
 /////////////////////////
 // define navigation menu
 
@@ -72,13 +72,13 @@ function base_scripts() {
 
 //	wp_enqueue_script( 'jquery' );
 
-	wp_enqueue_style( 'fonts', 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,900|Noto+Sans|Lato:100,300,400,700,900|Arimo:400,700|Ubuntu:400,700|Archivo+Narrow:400,700|Oxygen:400,700,300|Montserrat:400,700|Hind:400,700,500,300,600|Roboto+Condensed:700,700,300|Open+Sans:400,300,600,700,800|Roboto:400,100,300,500,700,900&subset=latin,latin-ext');
+	wp_enqueue_style( 'fonts', 'http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&subset=latin,latin-ext');
 
 	wp_enqueue_style( 'main-style', get_template_directory_uri() . '/assets/styles/build/style.css' );
 
-	wp_enqueue_script( 'plugins', get_template_directory_uri() . '/assets/javascripts/build/plugins.min.js', array(), false, false );
+//	wp_enqueue_script( 'plugins', get_template_directory_uri() . '/assets/javascripts/build/plugins.min.js', array(), false, false );
 
-	wp_enqueue_script( 'app', get_template_directory_uri() . '/assets/javascripts/build/app.min.js', array(), false, false );
+	wp_enqueue_script( 'app', get_template_directory_uri() . '/assets/javascripts/build/app.min.js', array(), false, true );
 
 }
 add_action( 'wp_enqueue_scripts', 'base_scripts' );
@@ -147,12 +147,12 @@ function first_post_image($size = 'thumbnail') {
 	global $post;
 
 	$photos = get_children( array('post_parent' => $post->ID, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => 'ASC', 'orderby' => 'menu_order ID') );
-	
+
 	if ($photos) {
 		$photo = array_shift($photos);
 		return wp_get_attachment_image($photo->ID, $size);
 	}
-	
+
 	return false;
 }
 
@@ -207,7 +207,7 @@ function my_post_gallery($output, $attr) {
 //      $img = wp_get_attachment_image_src($id, 'my-custom-image-size');
       $img_full = wp_get_attachment_image_src($id, 'full');
 
-        $output .= "<li><span data-lazy-load=\"{$img_full[0]}\">
+        $output .= "<li><span data-lazy-load=\"{$img_full[0]}\" data-load-attributes='{ \"width\": {$img_full[1]}, \"height\": {$img_full[2]} }'>
         				<a href=\"{$img_full[0]}\"></a>
         				<noscript><img src=\"{$img_full[0]}\"></a></noscript>
         			</span></li>\n";
