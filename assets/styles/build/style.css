@@ -257,6 +257,9 @@ body:after {
     transform: translateX(0%);
   }
 }
+.menu > .current-menu-item a {
+  color: #2300FF;
+}
 
 .headroom {
   position: fixed;
@@ -546,6 +549,28 @@ footer {
   padding-bottom: 40%;
   width: 100%;
   display: block;
+  position: relative;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+.loading-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  height: 5.55556rem;
+  animation: pulse 2.4s infinite;
 }
 
 @keyframes fadein {

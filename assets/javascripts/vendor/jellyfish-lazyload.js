@@ -178,9 +178,9 @@
 
 		// Load content
 		if ( type.toLowerCase() === 'img' ) {
-		//	wrapper.innerHTML = '<img ' + attributes + 'src="' + src + '">';
+			wrapper.innerHTML = '<img ' + attributes + 'src="' + src + '">';
 		} else if ( type.toLowerCase() === 'iframe' ) {
-		//	wrapper.innerHTML = '<iframe ' + attributes + 'src="' + src + '"></iframe>';
+			wrapper.innerHTML = '<iframe ' + attributes + 'src="' + src + '"></iframe>';
 		}
 
 		settings.callbackAfterContent( wrapper ); // Run callbacks after loading content

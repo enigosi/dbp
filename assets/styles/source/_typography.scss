@@ -52,13 +52,6 @@ html {
   font-family: $font-family-headers;
 }
 
-// align
-
-@mixin vertical-center {
-  position:absolute;
-  top:50%;
-  transform: translateY(-50%);
-}
 //font setups
 
 @mixin fat-text {

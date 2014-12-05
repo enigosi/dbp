@@ -62,7 +62,9 @@
 					}
 				}
 			} // ! breakpoint
-
+		} // ! > li
+		> .current-menu-item a {
+			color:$vivid-blue;
 		}
 	}
 

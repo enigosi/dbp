@@ -22,10 +22,20 @@
 				padding-bottom:40%;
 				width:100%;
 				display:block;
+				position:relative;
 			}
 			// >
+				@keyframes pulse {
+					0% { opacity: 0.5; }
+					50% { opacity: 1; }
+					100% { opacity: 0.5; }
+				}
 				.loading-icon {
 					@include vertical-center;
+					left:50%;
+					transform: translateX(-50%) translateY(-50%);
+					height:rem-calc(100px);
+					animation: pulse 3*$transition-time-s infinite;
 				}
 
 				@keyframes fadein {
