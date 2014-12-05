@@ -33,8 +33,9 @@
 			@include large;
 			@include fat-text;
     		padding-bottom:5px;
+    		line-height: rhythm(1.5);
     		border-bottom:2px solid $text-color;
-    		display:inline-block;
+    		display:inline;
     		color:$text-color;
 		}
 

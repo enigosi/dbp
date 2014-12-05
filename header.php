@@ -11,11 +11,11 @@
 
 	<body>
 
-	<header class="header">
+	<header id="header" class="header">
 		<div class="g_contain">
 			<h1>
 				<a href="<?php echo home_url(); ?>" class="logo-link">
-					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg" alt="Dobre Studio Projektowe" class="logo" />
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-simple.svg" alt="Dobre Studio Projektowe" class="logo" />
 				</a>
 			</h1>
 

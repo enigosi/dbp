@@ -68,6 +68,22 @@ module.exports = function(grunt) {
                     noLineComments: true,
                     force: true
                 }
+            },
+            prod: {
+                options: {
+                    require: ['susy','breakpoint'],
+                    sassDir: 'styles/source',
+                    cssDir: 'styles/build',
+                    imagesDir: 'images',
+                    images: 'images',
+                    javascriptsDir: 'javascripts/build',
+                    fontsDir: 'fonts',
+                    environment: 'production',
+                    outputStyle: 'compressed',
+                    relativeAssets: true,
+                    noLineComments: true,
+                    force: true
+                 }
             }
         },
 

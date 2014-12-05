@@ -30,6 +30,8 @@ footer {
 .scroll-top-arrow--hidden {
 	opacity:0;
 }
-.scroll-top-arrow--show {
-	opacity:1;
+@include breakpoint($medium-up) { //hide arrow for mobiles
+	.scroll-top-arrow--show {
+		opacity:1;
+	}
 }

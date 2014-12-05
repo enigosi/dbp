@@ -21,7 +21,7 @@
 	// Default settings
 	var defaults = {
 		icon: 'img/loading.gif',
-		offset: 0,
+		offset: 1200,
 		type: 'img',
 		callbackBeforeIcons: function () {},
 		callbackAfterIcons: function () {},
@@ -92,10 +92,16 @@
 	jellyfish.addLoadingIcons = function ( wrappers, options ) {
 		var settings = extend( settings || defaults, options || {} );  // Merge user options with defaults
 		settings.callbackBeforeIcons( wrappers ); // Run callbacks before loading icons
+
+		/* moje */
+		var containerWidth = document.querySelector(".g_content").offsetWidth;
+
 		forEach(wrappers, function (wrapper) {
 			var overrides = getDataOptions( wrapper.getAttribute( 'data-options' ) );
 			var icon = overrides.icon || settings.icon;
-			wrapper.innerHTML = '<img src="' + icon + '">';
+
+			/* moje */
+			setHeight(wrapper, containerWidth);
 		});
 		settings.callbackBeforeIcons( wrappers ); // Run callbacks after loading icons
 	};
@@ -109,12 +115,31 @@
 	 */
 	var isContentInViewport = function ( wrapper, offset ) {
 		var distance = wrapper.getBoundingClientRect();
+		/*
+		console.log("top: " + distance.top);
+		console.log(distance.top >= 0);
+		console.log("left: " + distance.left);
+		console.log(distance.left >= 0);
+		console.log("bottom: " + distance.bottom);
+		console.log(distance.bottom <= (window.innerHeight + offset || document.documentElement.clientHeight + offset));
+		console.log("right: " + distance.right);
+		console.log(distance.right <= (window.innerWidth || document.documentElement.clientWidth));
+		*/
 		return (
 			distance.top >= 0 &&
 			distance.left >= 0 &&
 			distance.bottom <= (window.innerHeight + offset || document.documentElement.clientHeight + offset) &&
 			distance.right <= (window.innerWidth || document.documentElement.clientWidth)
 		);
+	};
+
+	/**
+	Check screen size and scale img
+	*/
+	var setHeight = function (wrapper, containerWidth) {
+		var getAttributes = getDataOptions( wrapper.getAttribute( 'data-load-attributes' ) );
+		var ratio = getAttributes.height / getAttributes.width;
+		wrapper.style.paddingBottom = (ratio * 100) - 0.1 + "%";
 	};
 
 	/**
@@ -187,7 +212,7 @@
 	 * @param  {Object} settings
 	 */
 	var eventThrottler = function () {
-		//console.log(eventTimeout);
+		// console.log(eventTimeout);
 		if ( !eventTimeout ) {
 			eventTimeout = setTimeout( function() {
 				eventTimeout = null;

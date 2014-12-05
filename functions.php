@@ -207,7 +207,7 @@ function my_post_gallery($output, $attr) {
 //      $img = wp_get_attachment_image_src($id, 'my-custom-image-size');
       $img_full = wp_get_attachment_image_src($id, 'full');
 
-        $output .= "<li><span data-lazy-load=\"{$img_full[0]}\" data-load-attributes='{ \"width\": {$img_full[1]}, \"height\": {$img_full[2]} }'>
+        $output .= "<li><span class=\"image-container\" data-lazy-load=\"{$img_full[0]}\" data-load-attributes='{ \"width\": {$img_full[1]}, \"height\": {$img_full[2]}, \"class\": \"image-loaded\" }'>
         				<a href=\"{$img_full[0]}\"></a>
         				<noscript><img src=\"{$img_full[0]}\"></a></noscript>
         			</span></li>\n";

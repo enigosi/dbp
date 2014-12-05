@@ -1,5 +1,5 @@
-</div>
-	<div id="scroll-top-arrow" class="scroll-top-arrow--hidden">^</div>
+</div>q
+	<div id="scroll-top-arrow" class="scroll-top-arrow--hidden"><a data-scroll href="#header">^</a></div>
 	<footer>
 		<div class="g_contain">
 			<a href="mailto:biuro@dobrebiuroprojektowe.pl" class="footer-link"><span>biuro@dobrebiuroprojektowe.pl<span></a>
@@ -26,16 +26,6 @@
 
 		// lazylaoder
 		jellyfish.init({
-			callbackBeforeIcons: function ( wrappers ) {
-
-
-/*
-			var getAttributes = JSON.parse(wrappers.getAttribute( 'data-load-attributes' ));
-				console.log(getAttributes)
-				wrapper.style.height = getAttributes.height;
-				console.log( wrappers );
-			}
-			*/
 		});
 
 
