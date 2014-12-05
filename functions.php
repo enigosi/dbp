@@ -16,7 +16,7 @@ add_action( 'after_setup_theme', 'nav_menu' );
 // This theme uses post thumbnails
 
 add_theme_support( 'post-thumbnails' );
-
+set_post_thumbnail_size( 500, 334, true );
 
 /////////////////////////////
 // Realizacje Custom Post Type
@@ -208,7 +208,7 @@ function my_post_gallery($output, $attr) {
       $img_full = wp_get_attachment_image_src($id, 'full');
 
         $output .= "<li><span class=\"image-container\" data-lazy-load=\"{$img_full[0]}\" data-load-attributes='{ \"width\": {$img_full[1]}, \"height\": {$img_full[2]}, \"class\": \"image-loaded\" }'>
-        				<a href=\"{$img_full[0]}\"></a>
+                        <a href=\"{$img_full[0]}\"></a>
         				<noscript><img src=\"{$img_full[0]}\"></a></noscript>
         			</span></li>\n";
     }

@@ -16,7 +16,16 @@
 			 @include shift;
 			vertical-align: middle;
 			height:$header-height*0.8;
+
+			.logo-text {
+				opacity:0;
+				transition: opacity $transition-time-f linear;
+			}
+			&:hover .logo-text {
+				opacity:1;
+			}
 		}
+
 	// <
 	.menu {
 		float:right;

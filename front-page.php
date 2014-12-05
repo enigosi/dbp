@@ -8,8 +8,8 @@
 <div class="home-curtian" id="realizacje">
 	<div class="g_content">
 		<div class="g_shift">
-			<?php get_template_part( '/partials/loop', 'realizacje' ) ?>	
+			<?php get_template_part( '/partials/loop', 'realizacje' ) ?>
 		</div>
-	</div>		
+	</div>
 </div>
 <?php get_footer(); ?>

@@ -1,4 +1,4 @@
-</div>q
+</div>
 	<div id="scroll-top-arrow" class="scroll-top-arrow--hidden"><a data-scroll href="#header">^</a></div>
 	<footer>
 		<div class="g_contain">
@@ -26,6 +26,7 @@
 
 		// lazylaoder
 		jellyfish.init({
+			   icon: '<?php echo get_template_directory_uri(); ?>/assets/images/logo-white.svg'
 		});
 
 
