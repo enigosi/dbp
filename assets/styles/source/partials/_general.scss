@@ -59,7 +59,7 @@ img {
 	@include fat-text;
 	@include xlarge;
 
-  @include breakpoint($small-only) {
+  @include breakpoint($medium-down) {
     @include xxlarge;
     text-transform:uppercase;
     letter-spacing:2px;

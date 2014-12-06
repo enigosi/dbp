@@ -32,13 +32,13 @@
 	}
 	// >
 		.logo-link {
+			@include shift;
 			float:left;
 			vertical-align:middle;
 			width:auto;
 		}
 		// >
 			.logo {
-				 @include shift;
 				vertical-align: middle;
 				height:$header-height*0.8;
 

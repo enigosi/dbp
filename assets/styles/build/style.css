@@ -112,7 +112,7 @@ img {
   line-height: 42px;
   line-height: 2.33333rem;
 }
-@media (max-width: 40em) {
+@media (max-width: 67.5em) {
   .g_h1 {
     font-size: 48px;
     font-size: 2.66667rem;
@@ -180,31 +180,30 @@ body:after {
   }
 }
 
+.g_content {
+  margin: 3.11111rem 1.5% 0 1.5%;
+  padding: 0 1.5% 1.55556rem 1.5%;
+  background: #dfeaea;
+  width: 97%;
+}
 @media (min-width: 67.5em) {
   .g_content {
-    background: #dfeaea;
+    width: auto;
     padding: 3.11111rem 0 1.55556rem 0;
+    margin: 0 3.88889rem 0 5.55556rem;
   }
 }
 
-.g_shift {
-  margin: 3.11111rem -1.5% 0 -1.5%;
-  padding: 1.5% 1.5% 1.55556rem 1.5%;
-  background: #dfeaea;
-  overflow: hidden;
-}
 @media (min-width: 67.5em) {
   .g_shift {
     position: relative;
     left: -1.66667rem;
   }
 }
-@media (min-width: 67.5em) {
+@media (max-width: 67.5em) {
   .g_shift {
-    padding: 0;
-    margin: 0;
-    background: transparent;
-    overflow: visible;
+    position: relative;
+    top: -1.55556rem;
   }
 }
 
@@ -220,6 +219,13 @@ body:after {
     padding-bottom: 0;
   }
 
+  .oferta {
+    width: 40.67797%;
+    float: right;
+    margin-right: 0;
+  }
+}
+@media (min-width: 67.5em) {
   .oferta {
     width: 32.20339%;
     float: right;
@@ -259,19 +265,19 @@ body:after {
     vertical-align: middle;
     width: auto;
   }
-
-  .logo {
-    vertical-align: middle;
-    height: 4.97778rem;
-  }
 }
 @media (min-width: 40em) and (min-width: 67.5em) {
-  .logo {
+  .logo-link {
     position: relative;
     left: -1.66667rem;
   }
 }
+
 @media (min-width: 40em) {
+  .logo {
+    vertical-align: middle;
+    height: 4.97778rem;
+  }
   .logo .logo-text {
     opacity: 0;
     transition: opacity 0.2s linear;

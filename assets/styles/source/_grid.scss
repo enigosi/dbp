@@ -14,8 +14,11 @@ body {
 
 // page wd
 // page container
+
+$container-width: 94%;
+
 @mixin page-wrapper {
-  @include container(94%);
+  @include container($container-width);
 
   @include breakpoint($large-up){
     margin:0 $margin-right 0 $margin-left;
@@ -27,25 +30,23 @@ body {
 }
 .g_content {
 	@extend .g_contain;
+	margin:$padding-top 1.5% 0 1.5%;
+	padding:0 1.5% $padding-bottom 1.5%;
+	background: $light-blue;
+	width:$container-width +3%;
 
  	@include susy-breakpoint($large-up, $susy-medium-up){
-  		background: $light-blue;
+   		width:auto;
   		padding: $padding-top 0 $padding-bottom 0;
+    	margin:0 $margin-right 0 $margin-left;
  	}
 }
 
 .g_shift {
 	@include shift;
-	margin:$padding-top -1.5% 0 -1.5%;
-	padding:1.5% 1.5% $padding-bottom 1.5%;
-	background: $light-blue;
-	overflow:hidden;
-
- 	@include susy-breakpoint($large-up, $susy-medium-up){
-		padding:0;
-		margin:0;
-		background:transparent;
-		overflow:visible;
+	@include breakpoint($medium-down) {
+		position:relative;
+		top:-(rhythm(1));
 	}
 }
 
@@ -58,6 +59,11 @@ body {
 		@include span(7 of 12);
 		padding-bottom:0;
 	}
+	.oferta {
+		@include span(5 at 8 of 12);
+	}
+}
+@include susy-breakpoint($large-up, $susy-medium-up) {
 	.oferta {
 		@include span(4 at 9 of 12);
 	}
