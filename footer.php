@@ -1,8 +1,7 @@
-</div>
 	<div id="scroll-top-arrow" class="scroll-top-arrow--hidden"><a data-scroll href="#header">^</a></div>
 	<footer>
 		<div class="g_contain">
-			<a href="mailto:biuro@dobrebiuroprojektowe.pl" class="footer-link"><span>biuro@dobrebiuroprojektowe.pl<span></a>
+			<a href="mailto:biuro@dobrebiuroprojektowe.pl" class="footer-link">biuro@dobrebiuroprojektowe.pl</a>
 		</div>
 	</footer>
 

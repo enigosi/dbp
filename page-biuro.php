@@ -6,7 +6,7 @@
 				<h1 class="g_h1">Dobre Biuro projektowe</h1>
 				<div class="g_spacer"></div>
 				<p class="g_p">
-					DOBRE BIURO PROJEKTOWE oferuje kompleksowe usługi w zakresie projektowania obiektów kubaturowych oraz aranżacji i wyposażenia wnętrz. Działamy na rynku Trójmiejskim od 2000r. Specjalizujemy się w projektach budynków mieszkalnych oraz aranżacji wnętrz apartamentów, domów, hoteli, restauracji i innych obiektów uzyteczności publicznej.
+					Dobre Biuro Projektowe oferuje kompleksowe usługi w zakresie projektowania obiektów kubaturowych oraz aranżacji i wyposażenia wnętrz. Działamy na rynku Trójmiejskim od 2000r. Specjalizujemy się w projektach budynków mieszkalnych oraz aranżacji wnętrz apartamentów, domów, hoteli, restauracji i innych obiektów uzyteczności publicznej.
 				</p>
 				<h2 class="g_h1">Kontakt</h1>
 				<div class="g_spacer"></div>

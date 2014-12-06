@@ -4,33 +4,59 @@
 
 body {
 	@include container;
-	padding-top:$header-height;
+	padding-top:$header-height-m;
+
+ 	@include susy-breakpoint($medium-up, $susy-medium-up){
+		padding-top:$header-height;
+ 	}
 }
 
 
 // page wd
+// page container
+@mixin page-wrapper {
+  @include container(94%);
 
+  @include breakpoint($large-up){
+    margin:0 $margin-right 0 $margin-left;
+  }
+}
 
 .g_contain {
   	@include page-wrapper;
 }
 .g_content {
 	@extend .g_contain;
-  	background: $light-blue;
 
- 	@include susy-breakpoint ($medium-up, $susy-medium-up) {
- 		padding: $padding-top 0 $padding-bottom 0;
+ 	@include susy-breakpoint($large-up, $susy-medium-up){
+  		background: $light-blue;
+  		padding: $padding-top 0 $padding-bottom 0;
  	}
 }
 
 .g_shift {
 	@include shift;
+	margin:$padding-top -1.5% 0 -1.5%;
+	padding:1.5% 1.5% $padding-bottom 1.5%;
+	background: $light-blue;
+	overflow:hidden;
+
+ 	@include susy-breakpoint($large-up, $susy-medium-up){
+		padding:0;
+		margin:0;
+		background:transparent;
+		overflow:visible;
+	}
 }
 
 // Biuro Page layout
+.biuro {
+	padding-bottom: rhythm(1);
+}
 @include susy-breakpoint($medium-up, $susy-medium-up) {
 	.biuro {
 		@include span(7 of 12);
+		padding-bottom:0;
 	}
 	.oferta {
 		@include span(4 at 9 of 12);

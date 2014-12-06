@@ -1,33 +1,38 @@
 ////////////
 //biuro page
+@include susy-breakpoint($medium-up, $susy-medium-up){
 
-$oferta-box-shift:rem-calc(120px);
+	$oferta-box-shift:rem-calc(120px);
 
-.biuro-page {
-	margin-bottom:$oferta-box-shift;
-}
-// >
-	.oferta {
-		@include dbp-box-shadow();
-		margin: 0 0 (-$oferta-box-shift) 0;
-		padding: 30px;
-		background: white;
-		border: 4px solid $vivid-blue;
-
-		.g_h2 {
-			@include trailer($lil);
-		}
+	.biuro-page {
+		margin-bottom:$oferta-box-shift;
 	}
 	// >
-		.biuro-list {
-			@include trailer($lil);
+		.oferta {
+				padding: rem-calc(15px);
+				background: white;
+				border: 4px solid $vivid-blue;
 
-			> li {
-				@include separation-line;
+			.g_h2 {
+				@include trailer($lil);
+			}
 
-				&:first-child:before {
-					display:none;
+	 		@include susy-breakpoint($large-up, $susy-medium-up){
+	 			@include dbp-box-shadow();
+	 			padding: rem-calc(25px);
+				margin: 0 0 (-$oferta-box-shift) 0;
+	 		}
+		}
+		// >
+			.biuro-list {
+				@include trailer($lil);
+
+				> li {
+					@include separation-line;
+
+					&:first-child:before {
+						display:none;
+					}
 				}
 			}
-		}
-
+}

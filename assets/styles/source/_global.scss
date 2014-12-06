@@ -30,7 +30,8 @@ $mobile-font-scale:0.85;
 
 ////////////
 // font size
-$f-xxlarge: 64px;
+$f-xxxlarge: 64px;
+$f-xxlarge: 48px;
 $f-xlarge: 32px;
 $f-large: 22px;
 $f-smaller:16px;
@@ -111,6 +112,7 @@ $text-color: $oil;
 // layout settings
 // header
 $header-height: rem-calc($line-height*4);
+$header-height-m: $header-height*0.6;
 $footer-height: rem-calc($line-height*4);
 $margin-right: rem-calc(70px);
 $content-shift: rem-calc(30px);

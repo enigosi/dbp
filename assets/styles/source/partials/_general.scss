@@ -28,14 +28,7 @@
  	}
 }
 
-// page container
-@mixin page-wrapper {
-  @include container(94%);
 
-  @include breakpoint($large-up){
-    margin:0 $margin-right 0 $margin-left;
-  }
-}
 
 @mixin vertical-center {
   position:absolute;
@@ -65,6 +58,12 @@ img {
 .g_h1 {
 	@include fat-text;
 	@include xlarge;
+
+  @include breakpoint($small-only) {
+    @include xxlarge;
+    text-transform:uppercase;
+    letter-spacing:2px;
+  }
 }
 .g_h2 {
 	@include fat-text;

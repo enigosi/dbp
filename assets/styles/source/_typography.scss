@@ -35,6 +35,9 @@ html {
 @mixin xxlarge {
      @include adjust-font-size-to($f_xxlarge);
 }
+@mixin xxxlarge {
+     @include adjust-font-size-to($f_xxxlarge);
+}
 
 // font weight
 @mixin light {

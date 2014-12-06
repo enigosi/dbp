@@ -112,6 +112,16 @@ img {
   line-height: 42px;
   line-height: 2.33333rem;
 }
+@media (max-width: 40em) {
+  .g_h1 {
+    font-size: 48px;
+    font-size: 2.66667rem;
+    line-height: 56px;
+    line-height: 3.11111rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+}
 
 .g_h2 {
   font-family: "Lato", Helvetica, Arial, sans-serif;
@@ -141,12 +151,17 @@ body {
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 6.22222rem;
+  padding-top: 3.73333rem;
 }
 body:after {
   content: " ";
   display: block;
   clear: both;
+}
+@media (min-width: 40em) {
+  body {
+    padding-top: 6.22222rem;
+  }
 }
 
 .g_contain, .g_content {
@@ -165,20 +180,36 @@ body:after {
   }
 }
 
-.g_content {
-  background: #dfeaea;
-}
-@media (min-width: 40em) {
+@media (min-width: 67.5em) {
   .g_content {
+    background: #dfeaea;
     padding: 3.11111rem 0 1.55556rem 0;
   }
 }
 
+.g_shift {
+  margin: 3.11111rem -1.5% 0 -1.5%;
+  padding: 1.5% 1.5% 1.55556rem 1.5%;
+  background: #dfeaea;
+  overflow: hidden;
+}
 @media (min-width: 67.5em) {
   .g_shift {
     position: relative;
     left: -1.66667rem;
   }
+}
+@media (min-width: 67.5em) {
+  .g_shift {
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    overflow: visible;
+  }
+}
+
+.biuro {
+  padding-bottom: 1.55556rem;
 }
 
 @media (min-width: 40em) {
@@ -186,6 +217,7 @@ body:after {
     width: 57.62712%;
     float: left;
     margin-right: 1.69492%;
+    padding-bottom: 0;
   }
 
   .oferta {
@@ -195,34 +227,60 @@ body:after {
   }
 }
 .header {
-  height: 6.22222rem;
-  line-height: 6.22222rem;
+  height: 3.73333rem;
+  line-height: 3.73333rem;
   background: #fff;
 }
 
 .logo-link {
   float: left;
   vertical-align: middle;
+  overflow: hidden;
+  width: 3.47099rem;
 }
 
 .logo {
   vertical-align: middle;
-  height: 4.97778rem;
+  height: 2.98667rem;
 }
-@media (min-width: 67.5em) {
+.logo .logo-text {
+  display: none;
+}
+
+@media (min-width: 40em) {
+  .header {
+    height: 6.22222rem;
+    line-height: 6.22222rem;
+    background: #fff;
+  }
+
+  .logo-link {
+    float: left;
+    vertical-align: middle;
+    width: auto;
+  }
+
+  .logo {
+    vertical-align: middle;
+    height: 4.97778rem;
+  }
+}
+@media (min-width: 40em) and (min-width: 67.5em) {
   .logo {
     position: relative;
     left: -1.66667rem;
   }
 }
-.logo .logo-text {
-  opacity: 0;
-  transition: opacity 0.2s linear;
+@media (min-width: 40em) {
+  .logo .logo-text {
+    opacity: 0;
+    transition: opacity 0.2s linear;
+    display: block;
+  }
+  .logo:hover .logo-text {
+    opacity: 1;
+  }
 }
-.logo:hover .logo-text {
-  opacity: 1;
-}
-
 .menu {
   float: right;
   font-family: "Lato", Helvetica, Arial, sans-serif;
@@ -281,16 +339,12 @@ body:after {
 }
 
 footer {
-  height: 6.22222rem;
   padding: 1.55556rem 0;
   background: #fff;
   position: relative;
   z-index: 10;
 }
 
-.footer-link {
-  float: right;
-}
 .footer-link:before {
   width: 10px;
   height: 2px;
@@ -303,20 +357,24 @@ footer {
   margin-bottom: 14px;
   margin-bottom: 0.77778rem;
 }
-.footer-link span {
-  display: block;
-  clear: both;
+@media (min-width: 67.5em) {
+  .footer-link {
+    position: relative;
+    left: -1.66667rem;
+  }
 }
 
 #scroll-top-arrow {
   position: fixed;
   z-index: 11;
-  right: 25px;
-  bottom: 10px;
+  right: 1.94444rem;
+  transform: translateX(50%);
+  bottom: 1.55556rem;
   font-size: 64px;
   font-size: 3.55556rem;
   line-height: 70px;
   line-height: 3.88889rem;
+  line-height: 1.55556rem;
   transition: opacity 0.2s linear;
 }
 
@@ -329,42 +387,50 @@ footer {
     opacity: 1;
   }
 }
-.biuro-page {
-  margin-bottom: 6.66667rem;
+@media (min-width: 40em) {
+  .biuro-page {
+    margin-bottom: 6.66667rem;
+  }
+
+  .oferta {
+    padding: 0.83333rem;
+    background: white;
+    border: 4px solid #2300FF;
+  }
+  .oferta .g_h2 {
+    margin-bottom: 28px;
+    margin-bottom: 1.55556rem;
+  }
+}
+@media (min-width: 40em) and (min-width: 67.5em) {
+  .oferta {
+    box-shadow: -7px 7px 0px 0px #2300FF;
+    padding: 1.38889rem;
+    margin: 0 0 -6.66667rem 0;
+  }
 }
 
-.oferta {
-  box-shadow: -7px 7px 0px 0px #2300FF;
-  margin: 0 0 -6.66667rem 0;
-  padding: 30px;
-  background: white;
-  border: 4px solid #2300FF;
+@media (min-width: 40em) {
+  .biuro-list {
+    margin-bottom: 28px;
+    margin-bottom: 1.55556rem;
+  }
+  .biuro-list > li:before {
+    width: 10px;
+    height: 2px;
+    background: #222;
+    content: "";
+    float: inherit;
+    display: block;
+    margin-top: 14px;
+    margin-top: 0.77778rem;
+    margin-bottom: 14px;
+    margin-bottom: 0.77778rem;
+  }
+  .biuro-list > li:first-child:before {
+    display: none;
+  }
 }
-.oferta .g_h2 {
-  margin-bottom: 28px;
-  margin-bottom: 1.55556rem;
-}
-
-.biuro-list {
-  margin-bottom: 28px;
-  margin-bottom: 1.55556rem;
-}
-.biuro-list > li:before {
-  width: 10px;
-  height: 2px;
-  background: #222;
-  content: "";
-  float: inherit;
-  display: block;
-  margin-top: 14px;
-  margin-top: 0.77778rem;
-  margin-bottom: 14px;
-  margin-bottom: 0.77778rem;
-}
-.biuro-list > li:first-child:before {
-  display: none;
-}
-
 .fullscreen {
   position: fixed;
   width: 100%;
@@ -434,7 +500,7 @@ footer {
 }
 
 .realizacje-item {
-  margin-bottom: 2.5%;
+  margin-bottom: 5%;
 }
 .realizacje-item .realizacje-link > img {
   width: 100%;

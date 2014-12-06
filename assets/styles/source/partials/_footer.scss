@@ -2,7 +2,6 @@
 //footer
 
 footer {
-	height:$header-height;
 	padding: rhythm(1) 0;
 	background:$white;
 	position:relative;
@@ -11,20 +10,17 @@ footer {
 // >
 	.footer-link {
 		@include separation-line;
-		float:right;
-
-		span {
-			display:block;
-			clear:both;
-		}
+		@include shift;
 	}
 
 #scroll-top-arrow {
 	position:fixed;
 	z-index:11;
-	right:25px;
-	bottom:10px;
-	@include xxlarge;
+	right:$margin-right/2;
+	transform: translateX(50%);
+	bottom:rhythm(1);
+	@include xxxlarge;
+	line-height: rhythm(1);
 	transition: opacity $transition-time-f linear;
 }
 .scroll-top-arrow--hidden {

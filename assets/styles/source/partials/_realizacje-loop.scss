@@ -5,7 +5,7 @@
 	padding-top: gutter();
 }
 .realizacje-item {
-	margin-bottom: gutter();
+	margin-bottom: gutter(2);
 
 	.realizacje-link > img {
 		width:100%;
@@ -17,7 +17,7 @@
 
 	.realizacje-item {
 		@include gallery($col-medium/2 of $col-medium);
-		margin-bottom: gutter(); //redefine - 12 columns space
+		margin-bottom: gutter();
 		position:relative;
 	}
 	// >

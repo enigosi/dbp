@@ -15,7 +15,6 @@
 		<div class="g_contain">
 			<h1>
 				<a href="<?php echo home_url(); ?>" class="logo-link">
-					<!-- <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-simple.svg" alt="Dobre Studio Projektowe" class="logo" /> -->
 
 					<svg version="1.1" id="logo" class="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 						 viewBox="0 0 309.3 138.7" enable-background="new 0 0 309.3 138.7" xml:space="preserve">
@@ -79,4 +78,3 @@
 			</nav>
 		</div>
 	</header>
-	<div id="ajax">
