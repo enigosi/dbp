@@ -1,17 +1,25 @@
 /////////////
 // Realizacje
 
-.realizacje-list {
-	padding-top: gutter();
-}
 .realizacje-item {
-	margin-bottom: gutter(2);
-
+	margin-bottom: rhythm(2);
+}
+// >
 	.realizacje-link > img {
 		width:100%;
 		height:auto;
 	}
-}
+	.realizacje-title {
+		@include breakpoint($medium-down) {
+		    @include xlarge;
+		    @include bold;
+		    text-transform:uppercase;
+		    letter-spacing:2px;
+		}
+		@include breakpoint($bp-xxsmall $bp-medium) {
+		    @include xxlarge;
+		}
+	}
 
 @include susy-breakpoint($medium-up, $susy-medium-up) {
 

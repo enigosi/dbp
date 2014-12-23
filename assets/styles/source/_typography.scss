@@ -10,7 +10,7 @@ html {
     @include adjust-font-size-to($base-font-size*$tablet-font-scale);
   }
 
-  @include breakpoint($small-only) {
+  @include breakpoint($small-down) {
     @include adjust-font-size-to($base-font-size*$mobile-font-scale);
   }
 }
@@ -52,7 +52,7 @@ html {
 
 //font-family
 @mixin header {
-  font-family: $font-family-headers;
+//  font-family: $font-family-headers;
 }
 
 //font setups

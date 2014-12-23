@@ -20,7 +20,7 @@ $container-width: 94%;
 @mixin page-wrapper {
   @include container($container-width);
 
-  @include breakpoint($large-up){
+  @include breakpoint($large-up) {
     margin:0 $margin-right 0 $margin-left;
   }
 }
@@ -30,10 +30,10 @@ $container-width: 94%;
 }
 .g_content {
 	@extend .g_contain;
-	margin:$padding-top 1.5% 0 1.5%;
+  	@include container($container-width+3%);
 	padding:0 1.5% $padding-bottom 1.5%;
 	background: $light-blue;
-	width:$container-width +3%;
+	margin-top: $padding-top;
 
  	@include susy-breakpoint($large-up, $susy-medium-up){
    		width:auto;
@@ -47,6 +47,9 @@ $container-width: 94%;
 	@include breakpoint($medium-down) {
 		position:relative;
 		top:-(rhythm(1));
+	}
+	@include breakpoint($xxsmall-only) {
+		top:(rhythm(1))*(-0.7);
 	}
 }
 

@@ -63,7 +63,7 @@ module.exports = function(grunt) {
                     javascriptsDir: 'javascripts/build',
                     fontsDir: 'fonts',
                     environment: 'production',
-                    outputStyle: 'expanded',
+                    outputStyle: 'nested',
                     relativeAssets: true,
                     noLineComments: true,
                     force: true

@@ -72,7 +72,7 @@ function base_scripts() {
 
 //	wp_enqueue_script( 'jquery' );
 
-	wp_enqueue_style( 'fonts', 'http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&subset=latin,latin-ext');
+	wp_enqueue_style( 'fonts', 'http://fonts.googleapis.com/css?family=Lato:400,700&subset=latin,latin-ext');
 
 	wp_enqueue_style( 'main-style', get_template_directory_uri() . '/assets/styles/build/style.css' );
 

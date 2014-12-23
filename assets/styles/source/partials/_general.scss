@@ -29,7 +29,6 @@
 }
 
 
-
 @mixin vertical-center {
   position:absolute;
   top:50%;
@@ -60,8 +59,12 @@ img {
 	@include xlarge;
 
   @include breakpoint($medium-down) {
-    @include xxlarge;
     text-transform:uppercase;
+    letter-spacing:2px;
+  }
+
+  @include breakpoint($bp-xxsmall $bp-medium) {
+    @include xxlarge;
     letter-spacing:2px;
   }
 }
@@ -70,7 +73,6 @@ img {
 	@include large;
 }
 .g_p {
-	@include large;
 	@include trailer($lil);
 }
 

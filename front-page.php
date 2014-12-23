@@ -2,7 +2,9 @@
 
 	<div class="fullscreen">
 		<h1 class="fullscreen-text">Dobre Studio Projektowe Gdynia roby super projrkty tak.</h1>
-		<img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-fullscreen.jpg" alt="Dobre Studio Projektowe" class="fullscreen-image"/>
+		<div class="fullscreen-image-wrap">
+			<img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-fullscreen.jpg" alt="Dobre Studio Projektowe" class="fullscreen-image"/>
+		</div>
 		<a href="#realizacje" class="home-skip" data-scroll>Portfolio <span class="home-arrow">V</span></a>
 	</div>
 <div class="home-curtian" id="realizacje">

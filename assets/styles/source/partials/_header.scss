@@ -63,7 +63,7 @@
 			padding-left:20px;
 			@include fat-text;
 
-			@include susy-breakpoint($large-up, $susy-medium-up) {
+			@include susy-breakpoint($medium-up, $susy-medium-up) {
 
 				a {
 					display:block;
