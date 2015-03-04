@@ -116,7 +116,6 @@ img {
 
 *, *:before, *:after {
   -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
 body {
@@ -230,6 +229,7 @@ body {
     height: 4.97778rem; }
     .logo .logo-text {
       opacity: 0;
+      -webkit-transition: opacity 0.2s linear;
       transition: opacity 0.2s linear;
       display: block; }
     .logo:hover .logo-text {
@@ -244,6 +244,7 @@ body {
       .menu > li a {
         display: block;
         overflow: hidden;
+        -webkit-transition: color 0.1s linear;
         transition: color 0.1s linear; }
         .menu > li a:after {
           display: block;
@@ -251,13 +252,18 @@ body {
           height: 4px;
           background: #2300FF;
           content: "";
+          -webkit-transform: translateX(-100%);
+          -ms-transform: translateX(-100%);
           transform: translateX(-100%);
+          -webkit-transition: -webkit-transform 0.1s linear;
           transition: transform 0.1s linear;
           position: relative;
           top: -30px; }
         .menu > li a:hover {
           color: #2300FF; }
           .menu > li a:hover:after {
+            -webkit-transform: translateX(0%);
+            -ms-transform: translateX(0%);
             transform: translateX(0%); } }
   .menu > .current-menu-item a {
     color: #2300FF; }
@@ -268,13 +274,18 @@ body {
   left: 0;
   z-index: 10;
   right: 0;
+  -webkit-transition: all 0.2s linear;
   transition: all 0.2s linear; }
 
 .headroom--pinned {
+  -webkit-transform: translateY(0%);
+  -ms-transform: translateY(0%);
   transform: translateY(0%);
   opacity: 1; }
 
 .headroom--unpinned {
+  -webkit-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
   transform: translateY(-100%);
   opacity: .5; }
 
@@ -304,6 +315,8 @@ footer {
   position: fixed;
   z-index: 11;
   right: 1.38889rem;
+  -webkit-transform: translateX(50%);
+  -ms-transform: translateX(50%);
   transform: translateX(50%);
   bottom: 1.55556rem;
   font-size: 64px;
@@ -311,6 +324,7 @@ footer {
   line-height: 70px;
   line-height: 3.88889rem;
   line-height: 1.55556rem;
+  -webkit-transition: opacity 0.2s linear;
   transition: opacity 0.2s linear; }
 
 .scroll-top-arrow--hidden {
@@ -397,6 +411,7 @@ footer {
 .home-arrow {
   display: block;
   clear: both;
+  -webkit-transition: -webkit-transform 0.2s linear;
   transition: transform 0.2s linear; }
 
 .fullscreen-image-wrap {
@@ -426,6 +441,8 @@ footer {
   .fullscreen-text {
     position: absolute;
     top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     font-size: 64px;
     font-size: 3.55556rem;
@@ -443,6 +460,8 @@ footer {
     line-height: 1.55556rem;
     margin-left: -70px; }
     .home-skip:hover .home-arrow {
+      -webkit-transform: translateY(5px);
+      -ms-transform: translateY(5px);
       transform: translateY(5px); } }
 .realizacje-item {
   margin-bottom: 3.11111rem; }
@@ -486,9 +505,12 @@ footer {
   .realizacje-text {
     position: absolute;
     top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     text-align: center;
     opacity: 0;
+    -webkit-transition: opacity 0.2s;
     transition: opacity 0.2s;
     width: 84%;
     margin: 0 8%; }
@@ -506,6 +528,7 @@ footer {
     color: #222; }
 
   .realizacje-link > img {
+    -webkit-transition: opacity 0.2s;
     transition: opacity 0.2s;
     vertical-align: top; }
   .realizacje-link:hover .realizacje-text {
@@ -557,6 +580,14 @@ footer {
   display: block;
   position: relative; }
 
+@-webkit-keyframes pulse {
+  0% {
+    opacity: 0.5; }
+  50% {
+    opacity: 1; }
+  100% {
+    opacity: 0.5; } }
+
 @keyframes pulse {
   0% {
     opacity: 0.5; }
@@ -567,11 +598,22 @@ footer {
 .loading-icon {
   position: absolute;
   top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
   height: 5.55556rem;
+  -webkit-animation: pulse 2.4s infinite;
   animation: pulse 2.4s infinite; }
+
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
 
 @keyframes fadein {
   from {
@@ -579,6 +621,7 @@ footer {
   to {
     opacity: 1; } }
 .image-loaded {
+  -webkit-animation: fadein 0.8s linear;
   animation: fadein 0.8s linear;
   vertical-align: top;
   width: 100%; }

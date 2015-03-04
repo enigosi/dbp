@@ -117,15 +117,21 @@ module.exports = function(grunt) {
                 ],
                 tasks: ['jshint', 'uglify']
             }
+        },
+            // deployment
+        ftpush: {
+          build: {
+            auth: {
+              host: 'wojciechromanski.com',
+              port: 21,
+              authKey: 'one'
+            },
+            src: '../',
+            dest: '/domains/enigosi.ayz.pl/public_html/wordpress/wp-content/themes/dbp',
+            exclusions: ['assets/.sass-cache', 'assets/javascripts/source', 'assets/javascripts/vendor', 'assets/styles/source', 'assets/node_modules', '.gitignore', 'assets/.ftppass', 'assets/Gruntfile.js', 'assets/package.json', 'assets/.grunt', '.git']
+          }
         }
     });
-
-    // load tasks
-    //grunt.loadNpmTasks('grunt-contrib-jshint');
-    //grunt.loadNpmTasks('grunt-contrib-uglify');
-    //grunt.loadNpmTasks('grunt-contrib-compass');
-    //grunt.loadNpmTasks('grunt-contrib-watch');
-    //grunt.loadNpmTasks('grunt-contrib-imagemin');
 
     require('time-grunt')(grunt);
     require('load-grunt-tasks')(grunt);
@@ -138,6 +144,15 @@ module.exports = function(grunt) {
         'imagemin',
         'autoprefixer',
         'watch'
+    ]);
+
+    grunt.registerTask('deployment', [
+        'jshint',
+        'compass',
+        'uglify',
+        'imagemin',
+        'autoprefixer',
+        'ftpush'
     ]);
 
 };
