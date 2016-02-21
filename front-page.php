@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 	<div class="fullscreen">
-		<h1 class="fullscreen-text">Dobre Studio Projektowe Gdynia roby super projrkty tak.</h1>
+		<h1 class="fullscreen-text">Dobre Biuro Projektowe</h1>
 		<div class="fullscreen-image-wrap">
 			<img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-fullscreen.jpg" alt="Dobre Studio Projektowe" class="fullscreen-image"/>
 		</div>

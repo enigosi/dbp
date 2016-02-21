@@ -8,7 +8,7 @@ $the_query = new WP_Query($args);
 
 if ( $the_query->have_posts() ) {	?>
 
-	<ul class="realizacje-list">
+	<ul class="realizacje">
 
 	<?php
 			while ( $the_query->have_posts() ) {

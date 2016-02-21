@@ -122,12 +122,12 @@ module.exports = function(grunt) {
         ftpush: {
           build: {
             auth: {
-              host: 'wojciechromanski.com',
+              host: 'ftp.purzynscy.home.pl',
               port: 21,
               authKey: 'one'
             },
             src: '../',
-            dest: '/domains/enigosi.ayz.pl/public_html/wordpress/wp-content/themes/dbp',
+            dest: '/wp-content/themes/dbp',
             exclusions: ['assets/.sass-cache', 'assets/javascripts/source', 'assets/javascripts/vendor', 'assets/styles/source', 'assets/node_modules', '.gitignore', 'assets/.ftppass', 'assets/Gruntfile.js', 'assets/package.json', 'assets/.grunt', '.git']
           }
         }
